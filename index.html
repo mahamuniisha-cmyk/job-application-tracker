@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Application Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Page Heading -->
+        <header>
+            <h1>Job Application Tracker</h1>
+            <p>Track your job applications in one place.</p>
+        </header>
+
+        <!-- Dashboard Statistics -->
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Applied</h3>
+                <p id="appliedCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Interviews</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Selected</h3>
+                <p id="selectedCount">0</p>
+            </div>
+
+        </section>
+
+        
+<!-- Application Statistics Chart -->
+<section class="chart-section">
+    <h2>Application Statistics</h2>
+
+    <div class="chart-row">
+        <span>Applied</span>
+        <div class="chart-track">
+            <div id="appliedBar" class="chart-bar applied-bar"></div>
+        </div>
+        <span id="appliedPercentage">0%</span>
+    </div>
+
+    <div class="chart-row">
+        <span>Interview</span>
+        <div class="chart-track">
+            <div id="interviewBar" class="chart-bar interview-bar"></div>
+        </div>
+        <span id="interviewPercentage">0%</span>
+    </div>
+
+    <div class="chart-row">
+        <span>Selected</span>
+        <div class="chart-track">
+            <div id="selectedBar" class="chart-bar selected-bar"></div>
+        </div>
+        <span id="selectedPercentage">0%</span>
+    </div>
+</section>
+
+        <!-- Add Application Form -->
+        <section class="form-section">
+
+            <h2>Add New Application</h2>
+
+            <form id="jobForm">
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Company Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="Job Role"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <select id="status" required>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                </select>
+
+                <button type="submit">Add Application</button>
+
+            </form>
+
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="applications-section">
+
+            <h2>My Applications</h2>
+            
+            <button type="button" id="exportBtn">
+                Export Applications
+            </button>
+
+            <div class="filter-section">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search by company or job role..."
+                >
+
+                <select id="statusFilter">
+                    <option value="All">All Applications</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                </select>
+
+            </div>
+
+            <!-- Applications Table -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Job Role</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="jobList">
+                        <!-- JavaScript adds applications here -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
